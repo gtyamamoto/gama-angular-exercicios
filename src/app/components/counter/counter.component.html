@@ -1,0 +1,22 @@
+
+
+<div class="container" [ngStyle]="{'background': count<=10 && count>=-10 ? 'white' : 'red'}">
+        <p *ngIf="count<=10 && count>=-10;else endcount">counter works!</p>
+        <ng-template #endcount>
+            <p>counter finished</p>
+            <button (click)="reloadCounter()" class="btn btn-primary">Reload</button>
+        </ng-template>
+        <p *ngIf="count<1">count is less than 1</p>
+         <p *ngIf="count>5">count is greater than 5</p>
+        <p><strong>current number:</strong> {{count}}</p>
+        
+        <div class="row-fluid text-center">
+            <button (click)="subtractCount()" class=" btn btn-danger" [ngClass]="{'disabled': count>10 || count<-10}">-</button>
+        
+            <button (click)="addCount()" class=" offset-1 btn btn-success" [ngClass]="{'disabled': count>10 || count<-10}">+</button>
+        </div>
+        
+
+</div>
+
+
