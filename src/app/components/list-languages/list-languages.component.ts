@@ -1,5 +1,5 @@
 import { LanguageService } from './../../services/language.service';
-import { Language } from 'typings/Language';
+import { Language } from '../../../typings/Language';
 import { Component, OnInit } from '@angular/core';
 
 @Component({

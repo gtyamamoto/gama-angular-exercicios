@@ -1,4 +1,4 @@
-import { Language } from 'typings/Language';
+import { Language } from '../../../typings/Language';
 import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
