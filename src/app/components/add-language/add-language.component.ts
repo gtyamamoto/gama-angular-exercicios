@@ -26,6 +26,8 @@ export class AddLanguageComponent implements OnInit {
       alert('Language added successfully!')
       this.router.navigateByUrl('/languages')
 
+    },error=>{
+      alert('servidor com problemas,tente novamente!')
     })
   }
 
