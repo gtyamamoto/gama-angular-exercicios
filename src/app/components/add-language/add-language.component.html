@@ -1,0 +1,21 @@
+<div class="card">
+    <form #languageForm>
+        <h3 class="card-header text-center">Add a new Language</h3>
+
+        <div class="card-body">
+            <div class="form-group">
+              <label for="name">Name: </label>
+              <input type="text" name="name" required class="form-control" [(ngModel)]="language.name">
+            </div>
+            <div class="form-group">
+                <label for="creator">Creator: </label>
+                <input type="text" name="creator" required class="form-control" [(ngModel)]="language.creator">
+            </div>
+            <div class="form-group">
+                <label for="year">Name: </label>
+                <input type="number" name="year" required class="form-control" [(ngModel)]="language.year">
+            </div>
+        </div>
+        <button [disabled]="languageForm.invalid" type="submit" class="btn btn-primary p-1 my-2" (click)="postLanguage()">Add Language</button>
+    </form>
+</div>
