@@ -7,29 +7,25 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { CounterComponent } from './components/counter/counter.component';
-import { ListLanguagesComponent } from './components/list-languages/list-languages.component';
-import { LanguageComponent } from './components/language/language.component';
+
+
 import { NotaComponent } from './components/nota/nota.component';
-import { YearRangePipe } from './pipes/year-range.pipe';
-import { AddLanguageComponent } from './components/add-language/add-language.component';
+
+
 
 const routes : Routes = [
   {path:'',component:HomeComponent,pathMatch:'full'},
-  {path:'languages',component:ListLanguagesComponent},
-  {path:'addlanguage',component:AddLanguageComponent},
+  {path:'languages',loadChildren:()=>import('./languages/languages.module').then(m=>m.LanguagesModule)},
   {path:'counter',component:CounterComponent},
+  {path:'auth',loadChildren:()=>import('./auth/auth.module').then(m=>m.AuthModule)},
   {path:'**',component:NotaComponent}
 ]
 @NgModule({
   declarations: [
     AppComponent,
     CounterComponent,
-    ListLanguagesComponent,
-    LanguageComponent,
     HomeComponent,
-    NotaComponent,
-    YearRangePipe,
-    AddLanguageComponent
+    NotaComponent
   ],
   imports: [
     BrowserModule,

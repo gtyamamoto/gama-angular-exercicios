@@ -7,19 +7,29 @@
               <a class="nav-link" routerLink="/">Home</a>
             </li>
             <li class="nav-item">
+                <a class="nav-link" routerLink="/auth/register">Register</a>
+              </li>
+            <li class="nav-item">
+                <a class="nav-link" routerLink="/auth/login">Login</a>
+              </li>
+            <li class="nav-item">
               <a class="nav-link"routerLink="/counter">Counter</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" routerLink="/languages">Languages</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" routerLink="/addlanguage">Add a Languages</a>
+              <a class="nav-link" routerLink="/languages/add">Add a Languages</a>
             </li>
+            <li class="nav-item">
+                <a class="nav-link" (click)="logout()" >Logout</a>
+              </li>
           </ul>
       
       </nav>
     
       <div class="container mt-2">
+          <h3 *ngIf="email">Usuario Logado!!</h3>
           <router-outlet> </router-outlet>
 
       </div>
